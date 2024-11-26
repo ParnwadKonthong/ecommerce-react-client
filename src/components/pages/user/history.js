@@ -3,10 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 // Function
 import { getOrders } from "../../function/users";
-// PDF
-import { PDFDownloadLink } from "@react-pdf/renderer";
 // Invoice
-import Invoice from "../../invoice/invoice";
 import InvoiceJsPDF from "../../invoice/invoiceJsPDF";
 
 const History = () => {
@@ -51,16 +48,16 @@ const History = () => {
                   <div className="card-body">
                     <div className="row align-content-center">
                       {/* Order Status */}
-                    <div className="col fw-bold text-primary">
-                      Order Status:{" "}
-                      <span className="text-uppercase">{item.orderStatus}</span>
+                      <div className="col fw-bold text-primary">
+                        Order Status:{" "}
+                        <span className="text-uppercase">
+                          {item.orderStatus}
+                        </span>
+                      </div>
+                      <div className="col text-end">
+                        <InvoiceJsPDF order={item}>Download PDF</InvoiceJsPDF>
+                      </div>
                     </div>
-                    <div className="col text-end">
-                      <InvoiceJsPDF order={item}>Download PDF</InvoiceJsPDF>
-                    </div>
-
-                    </div>
-                    
 
                     {/* Table */}
                     <table className="table table-bordered mt-3">
@@ -89,19 +86,6 @@ const History = () => {
                         </tr>
                       </tbody>
                     </table>
-
-                    {/* PDF and Invoice Actions */}
-                    <div className="row mt-4">
-                      {/* <div className="col text-end">
-                        <PDFDownloadLink
-                          document={<Invoice order={item} />}
-                          fileName={`Invoice-${item._id}.pdf`}
-                          className="btn btn-outline-primary"
-                        >
-                          Download PDF
-                        </PDFDownloadLink>
-                      </div> */}
-                    </div>
                   </div>
                 </div>
               ))}
