@@ -4,9 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.4.0",
-    "@david.kucsai/react-pdf-table": "^0.4.1",
     "@mui/icons-material": "^5.16.7",
-    "@react-pdf/renderer": "^4.0.0",
     "@redux-devtools/extension": "^3.3.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -57,5 +55,10 @@
   },
   "devDependencies": {
     "eslint-plugin-react-hooks": "^4.6.2"
+  },
+  "overrides": {
+    "@react-pdf/renderer": {
+      "react": "^18.0.0"
+    }
   }
 }
