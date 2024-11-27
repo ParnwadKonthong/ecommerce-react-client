@@ -2,6 +2,7 @@
 import React from "react";
 import { jsPDF } from "jspdf";
 import { font } from "./THSarabunNew-normal";
+import autoTable from "jspdf-autotable";
 
 // moment
 import moment from "moment/min/moment-with-locales";
